@@ -1,18 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-       <link rel="stylesheet" href="style.css"> 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For my queen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .content.show {
+            opacity: 1;
+        }
+        
+        h1 {
+            color: #ff4081;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .foto1 {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: #e91e63;
+            transform: scale(1.05);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
 </head>
 <body>
-<div>
-       <h1>I Love You ❤️</h1>
-<img src="mocha-bear-hearts.gif" class="foto1">
+    <div class="container">
+        <button class="btn" onclick="showContent()">Press Here ❤️</button>
+        
+        <div id="content" class="content">
+            <h1>I Love You ❤️</h1>
+            <img src="mocha-bear-hearts.gif" class="foto1" alt="Mocha bear hearts">
+        </div>
+    </div>
 
-    
-</div>
-  
-    </body>
+    <script>
+        function showContent() {
+            const content = document.getElementById('content');
+            content.classList.add('show');
+        }
+    </script>
+</body>
 </html>
